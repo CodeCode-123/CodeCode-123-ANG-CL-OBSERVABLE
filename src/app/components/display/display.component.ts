@@ -17,7 +17,8 @@ export class DisplayComponent implements OnInit {
    * to set the 'milliseconds' field of this component. This should look very similar to the provided subscription.
    */
   ngOnInit(): void {
-    this.countService.getCounterSeconds().subscribe(updatedValue => this.seconds = updatedValue);
+    this.countService.getCounterSeconds().subscribe((updatedValue: number) => this.seconds = updatedValue);
+    this.countService.getCounterMilliseconds().subscribe((updatedValue: number) => this.milliseconds = updatedValue);
   }
 
 }
